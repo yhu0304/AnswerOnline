@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" 
+   "http://www.springframework.org/dtd/spring-beans.dtd">
+<!-- Spring配置文件的根元素，使用spring-beans-4.0.s.xsd语句定义 -->
+<beans default-autowire="byName">
+	<!--通过JNDI获得数据源的引用-->
+    <bean id="zxdyDataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+         <property name="jndiName">
+           <value>java:comp/env/jdbc/zxdy</value>
+         </property>
+    </bean>
+    <!-- 配置JdbcTemplate的bean -->
+     <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource">
+           <ref bean="zxdyDataSource"/>
+        </property>
+     </bean>
+     <!-- 配置DBUtil的bean 并注入资源-->
+     <bean id="DBUtil" class="com.jlxy.hy.answeronline.action.DBUtil">
+        <property name="jt">
+           <ref bean="jdbcTemplate"/>
+        </property>
+        <property name="ds">
+        	<ref bean="zxdyDataSource"/>
+        </property>
+     </bean>
+     <!-- Struts Action在Spring中对应的Bean -->
+     <!--配置验证用户名唯一性的Action为Spring的受管Bean并注入资源 -->
+    <bean id="UUAction" class="com.jlxy.hy.answeronline.action.UnameUniqueAction">
+        <property name="dbu">
+           <ref bean="DBUtil"/>
+        </property>
+    </bean>
+    <!--注册用户的Action为Spring的受管Bean并注入资源 -->
+    <bean id="Reg" class="com.jlxy.hy.answeronline.action.RegAction" >
+        <property name="dbu">
+           <ref bean="DBUtil"/>
+        </property>
+    </bean>
+    <!--用户登陆的Action为Spring的受管Bean并注入资源 -->
+    <bean id="Login" class="com.jlxy.hy.answeronline.action.LoginAction" >
+        <property name="dbu">
+           <ref bean="DBUtil"/>
+        </property>
+    </bean>
+    <!-- 进入首页的Action-->
+    <bean id="Index" class="com.jlxy.hy.answeronline.action.IndexAction" >
+        <property name="dbu">
+           <ref bean="DBUtil"/>
+        </property>
+    </bean>
+    <bean id="DYBaseAction" class="com.jlxy.hy.answeronline.action.DYBaseAction">
+    	<property name="dbu">
+           <ref bean="DBUtil"/>
+        </property>
+    </bean>
+    <!-- 从课程列表到问题列表的Action -->
+    <bean id="TTLAction" class="com.jlxy.hy.answeronline.action.TopicListAction" >
+        <property name="dbu">
+           <ref bean="DBUtil"/>
+        </property>
+    </bean>
+    <!-- 从问题到问题详情和回复列表的Action-->
+    <bean id="TTDAction" class="com.jlxy.hy.answeronline.action.TopicDetailAction" >
+        <property name="dbu">
+           <ref bean="DBUtil"/>
+        </property>
+    </bean>
+    <!--发表问题的Action-->
+    <bean id="EAction" class="com.jlxy.hy.answeronline.action.EmitAction" >
+        <property name="dbu">
+           <ref bean="DBUtil"/>
+        </property>
+    </bean>
+    <!--申请课程的Action-->
+    <bean id="AAction" class="com.jlxy.hy.answeronline.action.ApplyAction" >
+        <property name="dbu">
+           <ref bean="DBUtil"/>
+        </property>
+    </bean>
+    <!--得到课程列表的Action-->
+    <bean id="GMCAction" class="com.jlxy.hy.answeronline.action.GetMyCourseAction" >
+        <property name="dbu">
+           <ref bean="DBUtil"/>
+        </property>
+    </bean>
+    <!--得到用户资料的Action-->
+    <bean id="GMIAction" class="com.jlxy.hy.answeronline.action.GetMyInfo" >
+        <property name="dbu">
+           <ref bean="DBUtil"/>
+        </property>
+    </bean>
+    <!--修改密码的Action-->
+    <bean id="CPWDAction" class="com.jlxy.hy.answeronline.action.ChangePwdAction" >
+        <property name="dbu">
+           <ref bean="DBUtil"/>
+        </property>
+    </bean>
+    <!--修改资料的Action-->
+    <bean id="CIFAction" class="com.jlxy.hy.answeronline.action.ChangeInfoAction" >
+        <property name="dbu">
+           <ref bean="DBUtil"/>
+        </property>
+    </bean>
+    <!--到我的课程页面的Action-->
+    <bean id="TMCAction" class="com.jlxy.hy.answeronline.action.ToMyCourseAction" >
+        <property name="dbu">
+           <ref bean="DBUtil"/>
+        </property>
+    </bean>   
+    <!--教师页面分页Action的BaseAction-->
+		<bean id="TAFAction" class="com.jlxy.hy.answeronline.action.TipAndFenYeAction" >
+        <property name="dbu">
+           <ref bean="DBUtil"/>
+        </property>
+    </bean>     
+    <!--搜索我的问题的Action-->
+    <bean id="TMQAction" class="com.jlxy.hy.answeronline.action.ToMyQusetionAction" >
+        <property name="dbu">
+           <ref bean="DBUtil"/>
+        </property>
+    </bean> 
+    <!--搜索我参与过的问题的Action-->
+    <bean id="TMAAction" class="com.jlxy.hy.answeronline.action.ToMyAnswerAction" >
+        <property name="dbu">
+           <ref bean="DBUtil"/>
+        </property>
+    </bean>
+    <!--搜索我的申请的Action-->
+    <bean id="MyApplyAction" class="com.jlxy.hy.answeronline.action.ToMyApplayAction" >
+        <property name="dbu">
+           <ref bean="DBUtil"/>
+        </property>
+    </bean>
+    <!--搜索出我需要回答问题的Action-->
+    <bean id="TNAAction" class="com.jlxy.hy.answeronline.action.ToNeedAnswerAction" >
+        <property name="dbu">
+           <ref bean="DBUtil"/>
+        </property>
+    </bean>  
+    <!--到修改密码页面时得到未回答和未处理的数目的Action-->
+    <bean id="GTAction" class="com.jlxy.hy.answeronline.action.GetTipAction" >
+        <property name="dbu">
+           <ref bean="DBUtil"/>
+        </property>
+    </bean>
+    <!--添加学生的Action-->
+    <bean id="ASAction" class="com.jlxy.hy.answeronline.action.AddStuAction" >
+        <property name="dbu">
+           <ref bean="DBUtil"/>
+        </property>
+    </bean>
+    <!--老师管理学生的Action-->
+    <bean id="MSAction" class="com.jlxy.hy.answeronline.action.ManageStuAction" >
+        <property name="dbu">
+           <ref bean="DBUtil"/>
+        </property>
+    </bean>
+    
+    
+    
+    <!--管理员登陆的action-->
+   	<bean id="ALAction" class="com.jlxy.hy.answeronline.action.AdminLoginAction" >
+        <property name="dbu">
+           <ref bean="DBUtil"/>
+        </property>
+    </bean>
+    <!--管理员列表--> 
+    <bean id="AMAction" class="com.jlxy.hy.answeronline.action.AdminManageAction" >
+        <property name="dbu">
+           <ref bean="DBUtil"/>
+        </property>
+    </bean>
+    <!--用户列表-->
+    <bean id="TULAction" class="com.jlxy.hy.answeronline.action.ToUserListAction" >
+        <property name="dbu">
+           <ref bean="DBUtil"/>
+        </property>
+    </bean>
+    <bean id="TCLAction" class="com.jlxy.hy.answeronline.action.ToCourseListAction" >
+        <property name="dbu">
+           <ref bean="DBUtil"/>
+        </property>
+    </bean>
+    
+    <bean id="ECAction" class="com.jlxy.hy.answeronline.action.EditCourseAction" >
+        <property name="dbu">
+           <ref bean="DBUtil"/>
+        </property>
+    </bean>
+    
+    <bean id="TQLAction" class="com.jlxy.hy.answeronline.action.ToQuestionListAction" >
+        <property name="dbu">
+           <ref bean="DBUtil"/>
+        </property>
+    </bean>
+    
+     <bean id="TRLAction" class="com.jlxy.hy.answeronline.action.ToRevertListAction" >
+        <property name="dbu">
+           <ref bean="DBUtil"/>
+        </property>
+    </bean>
+    
+     <bean id="ATAction" class="com.jlxy.hy.answeronline.action.AddTeacherAction" >
+        <property name="dbu">
+           <ref bean="DBUtil"/>
+        </property>
+    </bean>
+</beans>

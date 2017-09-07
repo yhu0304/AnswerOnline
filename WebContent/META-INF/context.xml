@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<Context>  
+    <Resource name="jdbc/zxdy"   
+                auth="Container"   
+                type="javax.sql.DataSource"   
+                driverClassName="com.mysql.jdbc.Driver"   
+                url="jdbc:mysql://localhost:3306/zxdy"   
+                username="root"   
+                password="123456"   
+                maxActive="20"   
+                maxIdle="10"   
+                maxWait="10000"/>      
+</Context>  

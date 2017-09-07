@@ -1,0 +1,26 @@
+msg.hy=会员
+msg.uid=用户名：
+msg.pwd=密      码：
+msg.repwd=确认密码：
+msg.email=电子邮件：
+msg.sign=个性签名：
+msg.gender=性别：
+msg.yzm=输入验证码：
+gender.male=男
+gender.female=女
+msg.dl=登录
+msg.nav=金陵在线答疑
+msg.reg=基本信息 ( * 为必填项)
+index.title=金陵在线答疑
+reg.nav=注册
+
+login.failmsg=对不起，{0}，登录失败！
+login.okmsg=恭喜您,{0}，登录成功！
+login.caption=用户登录
+login.reset=取消
+struts.messages.error.content.type.not.allowed=您上传的文件类型只能是图片！请重新选择！
+struts.messages.error.file.too.large=您要上传的文件太大，请重新选择！
+
+
+
+

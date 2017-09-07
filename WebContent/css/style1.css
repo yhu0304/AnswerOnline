@@ -1,0 +1,296 @@
+body { 	
+	font-size:13px;	
+	margin:7px; 
+	background-color:#FAFFEF;
+}
+#menu { 
+	height: 31px; 
+	border: 1px solid #D1E7A9; 
+	background: #FAFFEF; 
+}
+#menu ul{ 
+		float: right; 
+		border-right: 1px solid #FAFFEF;
+		list-style-type:none;
+		margin-top:5px;
+}
+#menu li { 
+	float: left;
+	font-size:12px;
+	list-style-type:none;
+}
+#menu li a { 
+		text-decoration: none; 
+		float: left; 
+		color: #333; 
+		padding: 7px 8px 3px; 
+		background: url('../images/menu.gif') no-repeat 0 6px; 
+}
+#menu li a:active { 
+	background-color:#FFFFFF; 	
+	border-top:1px solid #D1E7A9;
+	border-left:1px solid #D1E7A9;
+	border-right:1px solid #D1E7A9;
+	border-bottom:1px solid #FFFFFF;
+ 	font-weight: bold; 
+  padding: 4px 7px 3px; 
+  background-image: none; 
+  }
+#nav { 
+	margin-top:2px;
+	margin-bottom:0px; 
+	padding:0px 0px;
+	float: left;
+	width:100%;
+	height:20;
+	padding-left: 5px;
+	}
+	#nav table{
+		padding:0px 0px;
+		margin:0px 0px;
+		font-size:13px;
+		width:100%;
+		height:30;
+	}
+#nav table td a { 
+	font-weight: bold;
+	color: #000;
+	text-decoration:none; 
+	}
+#nav table td a:hover{
+	text-decoration:underline;
+}
+.regbox {
+	background: #FAFFEF; 
+	border: 1px solid #c0c0b3; 
+	padding: 1px; 
+}
+.regtitle{
+		background:#FBFDF7;
+	  padding:5px;
+	  text-align:left;
+	  font-size:13px;
+	  font-weight:bold;
+	  color:white;  
+	  line-height:22px
+	  width:100%;
+}
+.regbox table th { 
+	background: #DFDFD4; 
+	padding: 2px 5px; 
+	line-height: 22px;
+	font: 12px/1.6em Arial,sans-serif;
+	color: #000000; 
+}
+.regbox table td {
+	background: #FAFFEF; 
+	vertical-align: top;
+	padding: 3px 5px;
+	line-height: 22px;
+	border-top: 1px solid #c0c0b3;
+	font: 12px/1.6em Arial,sans-serif;
+	color: #000000; 
+}
+.message{
+	color:black;
+	padding: 5px;
+	margin:2px;
+	font-size:12px;
+	vertical-align:middle;
+	text-align:middle;
+}
+#button{
+	cursor:hand;
+	margin-right: 1em; 
+	border: 1px solid; 
+	line-height: 1.5em;
+	border-color: #DFDFD4 #DFDFD4 #DFDFD4 #DFDFD4; 
+	background: #DFDFD4; 
+	color: #000; 
+	padding: 0 10px; 
+}
+#button2{						/*首页搜索按钮*/
+	cursor:hand;
+	margin-right: 1em; 
+	border: 1px solid; 
+	line-height: 1.5em;
+	border-color: #DFDFD4 #DFDFD4 #DFDFD4 #DFDFD4; 
+	background: #DFDFD4; 
+	color: black; 
+	height:21px;
+	padding: 0 10px; 
+}
+#button3{				/*我要提问按钮*/
+	cursor:hand;
+	margin-right: 0em; 
+	border: 1px solid; 
+	line-height: 1.5em;
+	border-color: #DFDFD4 #DFDFD4 #DFDFD4 #DFDFD4; 
+	background: #DFDFD4; 
+	color: #000;
+	padding-top: 2px; 
+}
+#button4{				/*发起问题按钮*/
+	cursor:hand;
+	margin-right: 0em; 
+	margin-left:25em;
+	border: 1px solid; 
+	line-height: 1.5em;
+	width:8em;;
+	border-color: #DFDFD4 #DFDFD4 #DFDFD4 #DFDFD4; 
+	background: #DFDFD4; 
+	color: #000;
+	padding-top: 2px; 
+}
+#button5{				/*重置按钮*/
+	cursor:hand;
+	margin-right: 0em; 
+	margin-left:25em;
+	border: 1px solid; 
+	line-height: 1.5em;
+	width:8em;;
+	border-color: #DFDFD4 #DFDFD4 #DFDFD4 #DFDFD4; 
+	background: #DFDFD4; 
+	color: #000;
+	padding-top: 2px; 
+}
+#errzd{
+	z-index:2;
+	visibility:hidden;
+	position:absolute;
+	left:20;
+	top:30;
+	font-size:12px;
+	background-color:white
+}
+.jd{     
+     visibility:hidden;
+     position:absolute;
+     z-index:1;
+     font-size:13px;
+}
+.input{																/*输入文本框的css*/
+	border-top:1px solid black;
+	border-left:1px solid black;
+	border-bottom:1px solid #D1E7A9;
+	border-right:1px solid #D1E7A9;
+	width:12em;
+}
+.input2{																/*输入文本框的css*/
+	border-top:1px solid black;
+	border-left:1px solid black;
+	border-bottom:1px solid #D1E7A9;
+	border-right:1px solid #D1E7A9;
+	width:8em;
+}
+.input3{																/*上传文件文本框的css*/
+	border-top:1px solid black;
+	border-left:1px solid black;
+
+	width:20em;
+}
+.input4{																/*上传文件文本框的css*/
+	border-top:1px solid black;
+	border-left:1px solid black;
+	width:17em;
+}
+.htbt{																/*回答问题标题的css*/
+	border-bottom:1px solid #c0c0c0;
+	border-right:1px solid #c0c0c0;
+	width:20em;
+}
+.textarea{
+	border-bottom:1px solid #c0c0c0;
+	border-right:1px solid #c0c0c0;
+}
+#yzm{
+	border-bottom:1px solid #c0c0c0;
+	border-right:1px solid #c0c0c0;
+	width:4em;	
+}
+/*一般页面的消息框*/
+.messagebox {
+	margin: 6.6em 10em 8.5em; 
+	padding: 0 0 1em;
+	border: 1px solid #D1E7A9; 
+	background: #FAFFEF; 
+	}
+	.messagebox h1 { 
+		line-height: 26px; 
+		border-bottom: 1px solid #D1E7A9; 
+		background: #FAFFEF; 
+		background-position: 0 0; 
+		padding-left: 1em; 
+		margin-top: 0em; 
+		font-size:15px; 
+	}
+	.messagebox p { margin: 0.8em; }
+	.messagebox a {
+		color: #000; 
+		text-decoration:none;
+	}
+	.messagebox a:hover{
+		font-weight:bold;
+		color:red;
+		text-decoration:underline;
+	}
+	/*个人页面的消息框*/
+	.personal_messagebox { 
+	margin: 5em 4em; 
+	padding: 0 0 1em;
+	border: 1px solid #D1E7A9; 
+	background: #FAFFEF; 
+	}
+	.personal_messagebox h1 { 
+		line-height: 26px; 
+		border-bottom: 1px solid #D1E7A9; 
+		background: #FAFFEF; 
+		background-position: 0 0; 
+		padding-left: 1em; 
+		margin-top: 0em; 
+		font-size:15px; 
+	}
+	.personal_messagebox p { 
+		margin: 0.8em;
+		font-size:13px;
+	}
+	.personal_messagebox a {
+		color: #000; 
+		text-decoration:none;
+	}
+	.personal_messagebox a:hover{
+		font-weight:bold;
+		color:red;
+		text-decoration:underline;
+	}
+	/*我的 隐藏菜单*/
+	.hidmenu{
+		width:170px;
+		padding:5px 15px;
+		border:1px solid #D1E7A9;
+		background:#FAFFEF;
+	}
+		.hidmenu table{
+			font-size:13px;
+			width:150px;
+			vertical-align:center;
+			padding:2px 2px;
+			margin-bottom:8px;
+			margin-top:8px;
+		}
+			.hidmenu table td{
+				height:25px;
+				padding-left:3px;
+				padding-right:3px;
+				padding-top:3px;
+				padding-bottom:1px;
+				border-bottom:1px solid #D1E7A9;
+		}
+		.hidmenu table td a{
+				text-decoration:none;
+				color:black;
+		}
+		.hidmenu table td a:hover{
+				text-decoration:underline;
+				color:black;
+		}
